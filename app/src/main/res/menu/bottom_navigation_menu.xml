@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/friendFragment"
+        android:title="친구"
+        android:icon="@drawable/ic_friend_24"/>
+
+    <item
+        android:id="@+id/shareFragment"
+        android:title="공유"
+        android:icon="@drawable/ic_share_24"/>
+
+    <item
+        android:id="@+id/albumFragment"
+        android:title="앨범"
+        android:icon="@drawable/ic_album_24"/>
+
+    <item
+        android:id="@+id/alarmFragment"
+        android:title="알림"
+        android:icon="@drawable/ic_notifications_24"/>
+
+    <item
+        android:id="@+id/myPage"
+        android:title="마이페이지"
+        android:icon="@drawable/ic_mypage_24"/>
+
+</menu>
