@@ -30,6 +30,10 @@ class AlbumFragment : Fragment() {
     ): View? {
         var rootView = inflater.inflate(R.layout.fragment_album, container, false)
         datas.add(AlbumData(R.drawable.ex_photo_1, "2022. 01. 19 (THU)", "쭈와뿌"))
+        datas.add(AlbumData(R.drawable.ex_photo_1, "2022. 01. 19 (THU)", "쭈와뿌"))
+        datas.add(AlbumData(R.drawable.ex_photo_1, "2022. 01. 19 (THU)", "쭈와뿌"))
+        datas.add(AlbumData(R.drawable.ex_photo_1, "2022. 01. 19 (THU)", "쭈와뿌"))
+        datas.add(AlbumData(R.drawable.ex_photo_1, "2022. 01. 19 (THU)", "쭈와뿌"))
 
         rv_photo = rootView.findViewById(R.id.rv_photo!!)as RecyclerView
         rv_photo.layoutManager = GridLayoutManager(requireContext(),2)

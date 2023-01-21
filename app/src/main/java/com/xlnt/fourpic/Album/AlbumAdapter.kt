@@ -13,40 +13,27 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.xlnt.fourpic.R
 
-private val ViewDataBinding.tv_date: Any
-    get() {}
+class AlbumAdapter(private val context: Context, private val dataset: ArrayList<AlbumData>) : RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder>() {
 
-class AlbumAdapter : RecyclerView.Adapter<AlbumAdapter.MyViewHolder>() {
-
-    private var data = mutableListOf<AlbumData>()
-
-    class MyViewHolder(private val binding: ViewDataBinding) : RecyclerView.ViewHolder(binding, root) {
-        //View와 데이터를 연결시키는 함수
-        fun bind(item: AlbumData) {
-            binding.tv_date.text = item.date
-            binding.tv_memo.text = item.memo
-            Glide.with(itemView).load(item.img).into(binding.img)
-        }
+    class AlbumViewHolder(private val view: View):RecyclerView.ViewHolder(view){
+        val iv_photo: ImageView = view.findViewById(R.id.iv_photo)
+        val tv_date: TextView = view.findViewById(R.id.tv_date)
+        val tv_memo: TextView = view.findViewById(R.id.tv_memo)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeatureViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val binding = DataBindingUtil.inflate(layoutInflater, R.layout.item_rv_photo, parent, false)
-        return MyViewHolder(binding)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
+        val adapterLayout = LayoutInflater.from(parent.context).inflate(R.layout.item_rv_photo, parent, false)
+        return AlbumViewHolder(adapterLayout)
     }
 
-    //상속받으면 자동 생성
-    //ViewHolder에서 데이터 묶는 함수가 실행되는 곳
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.onBind(data[position])
+    override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
+        val item = dataset.get(position)
+        Glide.with(context).load(item.img).into(holder.iv_photo)
+        holder.tv_date.text = item.date
+        holder.tv_memo.text = item.memo
     }
 
-    override fun getItemCount(): Int = data.size
+    override fun getItemCount(): Int = dataset.size
 
-    fun replaceList(newList: MutableList<AlbumData>) {
-        data = newList.toMutableList()
-        //어댑터의 데이터가 변했다는 notify를 날린다
-        notifyDataSetChanged()
-    }
 
 }

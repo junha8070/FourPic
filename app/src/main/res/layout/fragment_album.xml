@@ -43,7 +43,10 @@
         android:id="@+id/rv_photo"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_rv_photo"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
