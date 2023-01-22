@@ -9,24 +9,62 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:fitsSystemWindows="true">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleGravity="center"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:scrimVisibleHeightTrigger="180dp"
-            app:statusBarScrim="@android:color/transparent">
+            app:collapsedTitleTextColor="@color/Neutral_Variant_30"
+            app:contentScrim="@color/Neutral_Variant_90"
+            app:expandedTitleTextColor="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@color/Neutral_Variant_90"
+            app:title="앨범">
 
-            <!-- pin: 스크롤 시 고정 -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/memory"
+                app:layout_collapseMode="parallax" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="쌓은 추억"
+                    android:textColor="@color/Neutral_Variant_90"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="12"
+                    android:textStyle="bold"
+                    android:textColor="@color/Neutral_Variant_90"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+
+            <!--             pin: 스크롤 시 고정 -->
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                style="@style/Widget.MaterialComponents.Toolbar.Primary"
+                android:layout_gravity="bottom"
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="pin"
                 app:menu="@menu/album_menu" />
@@ -45,6 +83,7 @@
         tools:listitem="@layout/item_rv_photo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_qr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"

@@ -2,4 +2,6 @@
     <string name="app_name">FourPic</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="qr_code_button">QR코드를 인식하여 사진 혹은 동영상을 다운로드 합니다.</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
